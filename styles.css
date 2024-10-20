@@ -1,0 +1,41 @@
+/* styles.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.perspective-container {
+    height: 100vh;
+    overflow: hidden;
+    perspective: 1000px;
+}
+
+.perspective-content {
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) translateY(0);
+    transition: transform 0.5s;
+}
+
+.perspective-content h1 {
+    font-weight: bold;
+    color: #333;
+}
+
+.perspective-content p {
+    color: #666;
+}
+
+.perspective-content button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.perspective-content button:hover {
+    background-color: #444;
+}
