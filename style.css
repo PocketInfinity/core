@@ -1,21 +1,5 @@
 * {
-  font-family: 'Poppins', sans-serif;
-}
-
-.pastel-color-1 {
-  background-color: #ffb3ba; /* Light Pink */
-}
-.pastel-color-2 {
-  background-color: #ffdfba; /* Light Orange */
-}
-.pastel-color-3 {
-  background-color: #ffffba; /* Light Yellow */
-}
-.pastel-color-4 {
-  background-color: #baffc9; /* Light Green */
-}
-.pastel-color-5 {
-  background-color: #bae1ff; /* Light Blue */
+  font-family: "Poppins", sans-serif;
 }
 
 h1,
@@ -37,7 +21,6 @@ nav {
 }
 
 #nav-container {
-  padding: 0 5px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   color: white;
@@ -174,27 +157,6 @@ nav {
   margin: 10px auto; /* Center the divider and add margin above and below */
 }
 
-#mission-statement {
-  margin: 40px auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 90%;
-}
-
-#mission-statement > p {
-  font-size: larger;
-}
-
-#mission1,
-#mission2 {
-  width: 100%; /* Ensure child divs take full width */
-  box-sizing: border-box; /* Include padding and border in width */
-}
-
-#mission-map {
-  width: 100%; /* Make sure the map container is full width */
-}
-
 iframe {
   width: 100%; /* Make the iframe responsive */
   height: 450px; /* Set a fixed height for the iframe */
@@ -242,7 +204,7 @@ iframe {
   resize: vertical;
 }
 
-#contact-form-container button[type='submit'] {
+#contact-form-container button[type="submit"] {
   background-color: #4caf50;
   color: #fff;
   padding: 5px 10px;
@@ -251,7 +213,7 @@ iframe {
   cursor: pointer;
 }
 
-#contact-form-container button[type='submit']:hover {
+#contact-form-container button[type="submit"]:hover {
   background-color: #3e8e41;
 }
 
@@ -274,54 +236,33 @@ iframe {
 .welcome-card > img {
   width: 100%; /* Set the image width to 100% of the parent */
   height: 60vh; /* Set the image height to 100% of the parent */
-  object-fit: cover; /* Clip the image to fit the parent */
-  filter: brightness(0.4); /* Adjust brightness */
+  filter: brightness(0.6); /* Adjust brightness */
+  overflow: hidden;
 }
 
-/* Media Queries for Mobile Responsiveness */
+#mission-statement {
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 90%;
+}
 
-/* For screens smaller than 600px */
-@media (max-width: 400px) {
-  #nav-container {
-    grid-template-columns: 6fr; /* Change to one column */
-  }
+#mission-statement > p {
+  font-size: larger;
+}
 
-  .welcome-card > img {
-    height: 10vh;
-  }
+#mission1,
+#mission2 {
+  width: 100%; /* Ensure child divs take full width */
+  box-sizing: border-box; /* Include padding and border in width */
+}
 
-  #nav-items {
-    grid-template-columns: 6fr;
-  }
-  #cards-section {
-    grid-template-columns: 1fr; /* Change to one column */
-  }
+#mission-map {
+  width: 100%; /* Make sure the map container is full width */
+}
+
+@media (max-width: 700px) {
   #mission-statement {
-    grid-template-columns: 1fr; /* Change to one column */
-  }
-  #contact-form-container {
-    width: 80%; /* Adjust width for smaller screens */
-  }
-  #footer-grid {
-    grid-template-columns: 1fr; /* Change to one column */
-  }
-}
-
-/* For screens smaller than 400px */
-@media (max-width: 400px) {
-  #nav-items {
-    font-size: large; /* Reduce font size for smaller screens */
-  }
-  #welcome-message {
-    font-size: large; /* Reduce font size for smaller screens */
-  }
-  #cards-section {
-    gap: 10 px; /* Reduce gap between cards for smaller screens */
-  }
-  #mission-statement > h1 {
-    font-size: 40px; /* Reduce font size for smaller screens */
-  }
-  #contact-form-container {
-    width: 90%; /* Adjust width for even smaller screens */
+    grid-template-columns: 1fr;
   }
 }
