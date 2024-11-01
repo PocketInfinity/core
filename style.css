@@ -1,5 +1,35 @@
-* {
-  font-family: "Poppins", sans-serif;
+*,
+*::before,
+*::after {
+  font-family: 'Poppins', sans-serif;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  box-sizing: border-box; /* Include padding and border in width/height calculations */
+  max-width: 100%;
+}
+
+body {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Basic styles for links */
+a {
+  color: blue; /* Default link color */
+  text-decoration: none; /* Remove underline */
+  transition: all 0.3s ease; /* Smooth transition for all changes */
+}
+
+.orange {
+  color: orange;
+}
+
+.blue {
+  color: #005acd;
+}
+
+.white {
+  color: white;
 }
 
 h1,
@@ -7,71 +37,155 @@ h3 {
   text-transform: uppercase;
 }
 
-body {
-  margin: 0;
-  overflow-x: hidden;
-}
-
 nav {
   border-bottom: solid 5px orange;
   background-color: #01143b;
-  position: sticky; /* Make the navbar sticky */
-  top: 0; /* Stick to the top of the viewport */
-  z-index: 1000; /* Ensure it stays above other content */
+  position: sticky;
+  top: 0;
+  z-index: 1; /*Add this*/
 }
 
 #nav-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  color: white;
 }
 
 .logo > img {
-  width: 120px;
-  height: 120px;
-  margin-left: 25px;
+  width: 110px;
+  height: 100px;
+  padding-left: 1vw;
 }
 
 #nav-items {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   justify-self: end;
-  column-gap: 39px;
+  justify-items: end;
+  align-self: center;
+  padding-right: 5vw;
+}
 
-  font-size: x-large;
+.nav-item > a {
+  color: white;
+  margin-right: 1vw;
+  padding: 1vw;
+}
+
+.welcome-card {
+  overflow-y: hidden;
+  max-height: 50vh;
+  width: 100%;
+
+  display: grid;
   align-items: center;
+  justify-items: center;
 }
 
-.nav-item:hover {
-  transform: scale(1.05); /* Slightly increase size */
+.welcome-card > img {
+  filter: brightness(0.6); /* Adjust brightness */
+  width: 100%;
 }
 
-#welcome-message {
-  margin: 15px auto;
-  max-width: 80%;
+.welcome-card {
+  position: relative;
+  border-bottom: 5px solid orange;
+}
+
+.overlay-text {
+  position: absolute; /* Position the overlay absolutely */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust position to truly center */
+  color: white; /* Text color */
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  padding: 10px; /* Padding around the text */
+  text-align: center; /* Center the text */
+  border-radius: 5px; /* Optional: rounded corners */
+}
+
+#mission-statement {
+  margin: 5vh auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 90%;
+  column-gap: 20px;
+  row-gap: 10px;
+}
+
+#mission-statement > p {
+  font-size: larger;
+}
+
+#mission1,
+#mission2 {
+  width: 100%; /* Ensure child divs take full width */
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+#mission1 {
+  border: 2px solid grey; /* Green border */
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding inside the container */
+  background-color: #ffffff; /* White background */
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2); /* Slight shadow */
+}
+
+#mission1 > h1 {
+  font-size: 5vw; /* Responsive font size */
+  white-space: nowrap; /* Prevents text from wrapping */
+  overflow: hidden; /* Hides any overflow text */
+  text-overflow: ellipsis; /* Adds ellipsis (...) for overflowed text */
+  margin: 0; /* Remove default margin */
+
   text-align: center;
+}
+
+iframe {
+  width: 100%; /* Make the iframe responsive */
+  height: 550px; /* Set a fixed height for the iframe */
+  border: 0; /* Remove border */
+}
+
+#mission-map {
+  width: 100%; /* Make sure the map container is full width */
 }
 
 #cards-section {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+#cards-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 equal columns */
   max-width: 90%;
-  margin: 60px auto;
+  margin: 0 auto;
+  gap: 20px; /* Space between grid items */
 }
 
 #landing-cards {
-  text-align: center;
-  align-self: start;
-  background-color: white; /* Background color of the div */
-  padding: 20px; /* Padding inside the div */
+  background-color: #ffffff; /* White background for items */
+  border: 1px solid #ddd; /* Light gray border */
   border-radius: 8px; /* Rounded corners */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
-  transition: box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  padding: 10px; /* Padding inside grid items */
+  text-align: center; /* Center text alignment */
+}
+
+#landing-cards > img {
+  max-width: 100%; /* Ensure images are responsive */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 8px; /* Rounded corners for images */
 }
 
 #landing-cards:hover {
-  box-shadow: 1px 10px 22px #ffcc00; /* Darker shadow on hover */
+  box-shadow: 1px 5px 15px #ffcc00; /* Darker shadow on hover */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  #cards-section {
+    grid-template-columns: 1fr; /* 1 column on mobile */
+  }
 }
 
 #basic-cover {
@@ -88,97 +202,10 @@ nav {
   box-shadow: 1px 10px 22px #ffcc00; /* Darker shadow on hover */
 }
 
-.card-text {
-  margin-top: 25px;
-}
-
-.custom-card > img {
-  width: 100%;
-  display: block;
-  margin: auto;
-}
-
-.welcome-card {
-  position: relative;
-}
-
-.overlay-text {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  position: absolute; /* Position text absolutely within the container */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  opacity: 0.8;
-  transition: 0.6s;
-}
-
-.overlay-text:hover {
-  opacity: 1;
-}
-
-.overlay-text > h1 {
-  font-weight: 500;
-  font-size: 60px;
-}
-
-.overlay-text > h2 {
-  color: white;
-  font-size: 40px;
-}
-.overlay-text > * {
-  transform: translateY(18px);
-  transition: transform 0.6s;
-}
-
-.overlay-text:hover > * {
-  transform: translateY(0px);
-}
-
-.orange {
-  color: orange;
-}
-
-.blue {
-  color: #005acd;
-}
-
-.white {
-  color: white;
-}
-
-.divider {
-  width: 80%; /* Set the width of the divider */
-  height: 2px; /* Set the height (thickness) of the divider */
-  background-color: orange; /* Set the color of the divider */
-  margin: 10px auto; /* Center the divider and add margin above and below */
-}
-
-iframe {
-  width: 100%; /* Make the iframe responsive */
-  height: 450px; /* Set a fixed height for the iframe */
-  border: 0; /* Remove border */
-}
-
-#margin-bottom {
-  margin-bottom: 300px;
-}
-
-#whats-on-container {
-  display: grid;
-  justify-content: center;
-  text-align: center;
-  max-width: 80%;
-  margin: 20px auto;
-}
-
 #contact-form-container {
-  max-width: 50%;
-  margin: 20px auto;
-  padding: 10px;
+  max-width: 90%; /* Adjust to ensure it fits in mobile view */
+  margin: 1vh auto;
+  padding: 3vh;
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -193,7 +220,7 @@ iframe {
 #contact-form-container input,
 #contact-form-container textarea {
   width: 100%;
-  padding: 5px;
+  padding: 5 px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -204,7 +231,7 @@ iframe {
   resize: vertical;
 }
 
-#contact-form-container button[type="submit"] {
+#contact-form-container button[type='submit'] {
   background-color: #4caf50;
   color: #fff;
   padding: 5px 10px;
@@ -213,7 +240,7 @@ iframe {
   cursor: pointer;
 }
 
-#contact-form-container button[type="submit"]:hover {
+#contact-form-container button[type='submit']:hover {
   background-color: #3e8e41;
 }
 
@@ -223,46 +250,139 @@ iframe {
 
 #contact-form {
   margin-top: 50px;
+  margin-bottom: 70px;
 }
 
-#footer-grid {
-  width: 100%;
-  border-top: 1px solid orange;
-  background-color: #01143b;
+.footer {
+  max-width: 100%;
+  background-color: #01143b; /* Footer background color */
+  color: white; /* Text color */
+  padding: 20px; /* Padding inside footer */
+  text-align: center; /* Center text alignment */
+}
+
+.footer-content {
+  margin-bottom: 20px; /* Space between content and bottom */
+}
+
+.footer-links {
+  margin: 10px 0; /* Space above and below links */
+}
+
+.footer-links a {
+  color: white; /* Link color */
+  text-decoration: none; /* Remove underline */
+  margin: 0 15px; /* Space between links */
+}
+
+.footer-links a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.5); /* Light border on top */
+  padding-top: 10px; /* Padding above copyright text */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #005acd;
   color: white;
-  grid-template-columns: repeat(auto-fit, minmax(1, 1fr));
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.welcome-card > img {
-  width: 100%; /* Set the image width to 100% of the parent */
-  height: 60vh; /* Set the image height to 100% of the parent */
-  filter: brightness(0.6); /* Adjust brightness */
-  overflow: hidden;
+button:hover {
+  background-color: #004ba0;
 }
 
-#mission-statement {
-  margin: 40px auto;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 90%;
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
 }
 
-#mission-statement > p {
-  font-size: larger;
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  max-width: 500px; /* Max width for larger screens */
+  border-radius: 8px; /* Rounded corners */
 }
 
-#mission1,
-#mission2 {
-  width: 100%; /* Ensure child divs take full width */
-  box-sizing: border-box; /* Include padding and border in width */
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
-#mission-map {
-  width: 100%; /* Make sure the map container is full width */
+.close-button:hover,
+.close-button:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 @media (max-width: 700px) {
+  .logo > img {
+    width: 100px;
+    height: 100px;
+    padding-left: 1vw;
+  }
+
+  h1 {
+    size: 20px;
+  }
+
   #mission-statement {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 900px) {
+  .nav-item > svg {
+    height: 50px;
+    width: 50px;
+  }
+
+  body {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .welcome-card {
+    display: flex; /* Enable flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    overflow: hidden; /* Hide overflow */
+    width: 100%; /* Set width as needed */
+
+    position: relative; /* Positioning context for absolute child */
+    height: 60vh;
+  }
+
+  .welcome-card > img {
+    max-width: none; /* Prevent image scaling */
+    max-height: none; /* Prevent image scaling */
+    position: absolute; /* Allow positioning */
+    top: 50%; /* Move to the middle */
+    left: 50%; /* Move to the middle */
+    transform: translate(-50%, -50%); /* Center the image */
+  }
+}
+
+@media (min-width: 1000px) {
+  .overlay-text > h1 {
+    font-size: 80px;
   }
 }
