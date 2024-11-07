@@ -15,9 +15,13 @@ body {
 
 /* Basic styles for links */
 a {
-  color: blue; /* Default link color */
+  color: white; /* Default link color */
   text-decoration: none; /* Remove underline */
   transition: all 0.3s ease; /* Smooth transition for all changes */
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .orange {
@@ -73,7 +77,7 @@ nav {
 
 .welcome-card {
   overflow-y: hidden;
-  max-height: 50vh;
+  max-height: 60vh;
   width: 100%;
 
   display: grid;
@@ -82,7 +86,7 @@ nav {
 }
 
 .welcome-card > img {
-  filter: brightness(0.6); /* Adjust brightness */
+  /* filter: brightness(0.8); Adjust brightness */
   width: 100%;
 }
 
@@ -142,7 +146,7 @@ nav {
 
 iframe {
   width: 100%; /* Make the iframe responsive */
-  height: 550px; /* Set a fixed height for the iframe */
+  height: 500px; /* Set a fixed height for the iframe */
   border: 0; /* Remove border */
 }
 
@@ -254,6 +258,7 @@ iframe {
 }
 
 .footer {
+  border-top: solid 5px orange;
   max-width: 100%;
   background-color: #01143b; /* Footer background color */
   color: white; /* Text color */
@@ -333,11 +338,51 @@ button:hover {
   cursor: pointer;
 }
 
+.alt-content {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 20px 0;
+  font-size: 13px;
+
+  justify-content: center;
+}
+
+.alt-content * {
+  padding: 5px;
+  text-transform: uppercase;
+  font-size: 25px;
+}
+
+.khanda {
+  height: 100px;
+  width: 100px;
+  margin-bottom: 2vh;
+}
+
 @media (max-width: 700px) {
   .logo > img {
     width: 100px;
     height: 100px;
     padding-left: 1vw;
+  }
+
+  .footer-content {
+    max-width: 100%;
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 1vh 0vw;
+  }
+
+  .alt-content p {
+    font-size: 15px;
+  }
+
+  .alt-content a {
+    max-width: 100%;
   }
 
   h1 {
