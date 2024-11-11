@@ -35,7 +35,7 @@ nav {
   display: flex;
   justify-content: space-between;
 
-  max-width: 95%;
+  width: 90%;
   margin: auto;
   align-items: center;
 }
@@ -129,13 +129,24 @@ nav a:hover::after {
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  * {
+    border: 1px solid blue;
+  }
+  body {
+    max-width: 100%;
+    margin: 0 auto;
+  }
   nav {
     display: grid;
     grid-template-columns: 1fr;
+    max-width: 90%;
+    margin: auto;
   }
 
-   {
-    font-size: 5px;
+  nav > ul {
+    display: grid;
+    max-width: 90%;
+    margin: auto;
   }
 
   .showcase > h1 {
