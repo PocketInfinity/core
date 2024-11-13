@@ -24,16 +24,24 @@ nav > h1 {
   font-weight: 400;
   font-style: normal;
   font-size: 100px;
+
+  opacity: 0;
+  transition: opacity 0.4s ease;
 }
 
 /* NAVBAR */
 nav {
   display: flex;
   justify-content: space-between;
-
   width: 90%;
   margin: auto;
   align-items: center;
+}
+nav > h1 {
+  z-index: 10; /* Higher than the hamburger */
+  transition-property: color, opacity;
+  transition-duration: 5s;
+  opacity: 1;
 }
 
 nav > ul {
@@ -268,7 +276,7 @@ nav a:hover::after {
 }
 
 /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {
+@media (max-width: 600px) {
   body {
     max-width: 100%;
     margin: 0 auto;
@@ -281,10 +289,6 @@ nav a:hover::after {
     justify-items: center;
   }
 
-  nav > ul {
-    display: none;
-  }
-
   .showcase > h1 {
     font-size: 25px;
   }
@@ -292,6 +296,9 @@ nav a:hover::after {
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
+  .menu-wrap {
+    display: none;
+  }
 }
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
