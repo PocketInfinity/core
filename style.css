@@ -31,6 +31,7 @@ nav > h1 {
 
 /* NAVBAR */
 nav {
+  position: sticky;
   display: flex;
   justify-content: space-between;
   width: 90%;
@@ -275,18 +276,28 @@ nav a:hover::after {
   transition: color 0.4s ease;
 }
 
+.margin {
+  margin-bottom: 600px;
+}
+
 /* Extra small devices (phones, 600px and down) */
 @media (max-width: 600px) {
   body {
     max-width: 100%;
     margin: 0 auto;
   }
-  nav {
-    display: grid;
+  nav > ul {
+    display: none;
     grid-template-columns: 1fr;
     max-width: 90%;
     margin: auto;
     justify-items: center;
+  }
+
+  nav {
+    position: sticky;
+    display: flex;
+    justify-content: center;
   }
 
   .showcase > h1 {
