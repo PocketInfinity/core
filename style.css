@@ -11,6 +11,11 @@
 body {
   font-family: "Roboto", sans-serif;
   line-height: 1.4;
+  overflow-x: hidden; /* Prevent scrollbars */
+}
+
+h1 {
+  text-transform: uppercase;
 }
 
 :root {
@@ -34,14 +39,15 @@ nav {
   position: sticky;
   display: flex;
   justify-content: space-between;
-  width: 90%;
+
   margin: auto;
   align-items: center;
+  background-color: #3c6e71;
+  border-bottom: 5px solid #333;
 }
 nav > h1 {
-  z-index: 10; /* Higher than the hamburger */
-  transition-property: color, opacity;
-  transition-duration: 5s;
+  margin-left: 10px;
+  color: white;
   opacity: 1;
 }
 
@@ -63,7 +69,7 @@ a {
 }
 
 a:visited {
-  color: black;
+  color: lightgray;
 }
 
 nav a::after {
@@ -73,7 +79,7 @@ nav a::after {
   bottom: 0;
   width: 0;
   height: 2px; /* Thickness of the underline */
-  background-color: black;
+  background-color: white;
   transition: width 0.3s ease, left 0.3s ease;
 }
 
@@ -283,8 +289,13 @@ nav a:hover::after {
 /* Extra small devices (phones, 600px and down) */
 @media (max-width: 600px) {
   body {
+    overflow-x: hidden; /* Prevent scrollbars */
     max-width: 100%;
     margin: 0 auto;
+  }
+
+  .carousel-wrapper {
+    overflow-x: hidden;
   }
   nav > ul {
     display: none;
@@ -295,13 +306,63 @@ nav a:hover::after {
   }
 
   nav {
-    position: sticky;
     display: flex;
     justify-content: center;
   }
 
-  .showcase > h1 {
+  body > h1 {
     font-size: 25px;
+  }
+}
+
+.carousel-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.carousel-content {
+  display: flex;
+  position: relative;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+
+  animation-name: carousel;
+  animation-duration: 30s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.carousel-title {
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-content > img {
+  margin: 10px;
+}
+
+.clyde-logo {
+  width: 400px;
+  height: 150px;
+}
+
+.sikh-logo {
+  width: 200px;
+  height: 200px;
+}
+
+.carousel-title > h1 {
+  font-size: 50px;
+}
+
+@keyframes carousel {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
   }
 }
 
