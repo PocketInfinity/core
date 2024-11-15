@@ -1,7 +1,5 @@
 /* fonts */
-
-@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yellowtail&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yellowtail&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -15,45 +13,67 @@ body {
 }
 
 h1 {
+  font-family: "Righteous", sans-serif;
+  font-weight: 200;
+  font-style: normal;
   text-transform: uppercase;
 }
 
 :root {
-  --primary-color: lightblue;
+  --primary-color: #007f81;
   --overlay-color: rgba(24, 39, 51, 0.85);
   --menu-speed: 0.75s;
 }
 
-nav > h1 {
-  font-family: "Yellowtail", cursive;
-  font-weight: 400;
+nav > .title > h1 {
+  font-family: "Righteous", sans-serif;
+  font-weight: 200;
   font-style: normal;
-  font-size: 100px;
-
+  font-size: 70px;
   opacity: 0;
   transition: opacity 0.4s ease;
+  color: #007f81;
 }
 
 /* NAVBAR */
 nav {
-  position: sticky;
+  position: sticky; /* This makes the navbar sticky */
+  top: 0; /* Position it at the top of the viewport */
+  width: 100%; /* Full width */
+  z-index: 1000; /* Ensures it stays above other content */
+  background-color: white;
+
   display: flex;
   justify-content: space-between;
 
   margin: auto;
   align-items: center;
-  background-color: #3c6e71;
-  border-bottom: 5px solid #333;
+  border-bottom: 3px solid grey;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Horizontal offset, vertical offset, blur radius, color */
 }
-nav > h1 {
-  margin-left: 10px;
-  color: white;
+nav > .title > h1 {
   opacity: 1;
 }
 
+nav > .title {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+
+nav > .title > p {
+  color: black;
+
+  font-family: "Roboto", sans-serif;
+  line-height: 1.4;
+  overflow-x: hidden; /* Prevent scrollbars */
+  font-size: 20px;
+}
 nav > ul {
   list-style-type: none;
   display: flex;
+  margin-right: 20px;
 }
 
 nav > ul > li {
@@ -69,7 +89,7 @@ a {
 }
 
 a:visited {
-  color: lightgray;
+  color: black;
 }
 
 nav a::after {
@@ -79,7 +99,7 @@ nav a::after {
   bottom: 0;
   width: 0;
   height: 2px; /* Thickness of the underline */
-  background-color: white;
+  background-color: black;
   transition: width 0.3s ease, left 0.3s ease;
 }
 
@@ -90,12 +110,9 @@ nav a:hover::after {
 
 /* showcase */
 
-.showcase > h1 {
-  font-family: "Lato", serif;
-  font-weight: 700;
-  font-size: 50px;
-  font-style: normal;
+.core-mention {
   text-transform: uppercase;
+  font-family: "Righteous", sans-serif;
 }
 
 .showcase {
@@ -106,52 +123,74 @@ nav a:hover::after {
   text-align: center;
   justify-content: flex-end;
   padding-bottom: 50px;
-  margin-top: 40px;
+
+  margin-top: 5vh;
   margin-bottom: 20px;
 }
-
-.showcase h2,
-.showcase p {
-  padding-top: 25px;
-  margin: 10px;
-  font-size: 25px;
+.showcase > h1 {
+  max-width: 75%;
+  font-family: "Roboto", sans-serif;
+  line-height: 1.4;
+  font-weight: 400;
+  text-transform: uppercase;
   text-align: center;
-  max-width: 80%;
+
+  font-size: 80px;
+}
+
+.showcase p {
+  max-width: 45%;
+  padding-top: 30px;
+  margin: 10px;
+  font-size: 30px;
+  font-weight: 350;
+  text-align: center;
 }
 
 .showcase .btn {
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .btn {
   padding: 17px;
-  background: white;
-  border: 3px solid black;
+  background: lightblue;
+  border: 3px solid lightblue;
   border-radius: 17px;
 
   text-transform: uppercase;
   font-size: 20px;
 
-  transition: background-color 0.3s ease-in, color 0.3s ease-in; /* Add transition for background-color and color */
+  transition: background-color 0.3s ease-in, color 0.3s ease-in,
+    border-color 0.3s ease-in; /* Add transition for background-color and color */
 }
 
 .btn:hover {
-  background-color: lightblue;
+  background-color: #007f81;
+  border-color: #007f81;
   color: white;
+}
+
+.pretend-website {
+  height: 50vh;
+  width: 95%;
+  background-color: lavender;
+  border: 2px solid lavender;
+  border-radius: 40px;
 }
 
 /* MENU STYLES */
 .menu-wrap {
   position: fixed;
   top: 0;
-  left: 0;
-  z-index: 1;
+  right: 0;
+  z-index: 1001;
 }
 
 .menu-wrap .toggler {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   z-index: 2;
   cursor: pointer;
   width: 50px;
@@ -162,7 +201,7 @@ nav a:hover::after {
 .menu-wrap .hamburger {
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   z-index: 1;
   width: 60px;
   height: 60px;
@@ -238,7 +277,7 @@ nav a:hover::after {
 .menu-wrap .menu {
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
   height: 100%;
   visibility: hidden;
@@ -251,8 +290,8 @@ nav a:hover::after {
 .menu-wrap .menu > div {
   background: var(--overlay-color);
   border-radius: 50%;
-  width: 200vw;
-  height: 200vw;
+  width: 500vw;
+  height: 500vw;
   display: flex;
   flex: none;
   align-items: center;
@@ -309,8 +348,32 @@ nav a:hover::after {
     display: flex;
     justify-content: center;
   }
+}
 
-  body > h1 {
+@media (max-width: 900px) {
+  body {
+    overflow-x: hidden; /* Prevent scrollbars */
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .carousel-wrapper {
+    overflow-x: hidden;
+  }
+
+  nav > title {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  .showcase > h1 {
+    font-size: 40px;
+    max-width: 80%;
+  }
+
+  .showcase > p {
+    max-width: 80%;
     font-size: 25px;
   }
 }
@@ -370,6 +433,16 @@ nav a:hover::after {
 @media only screen and (min-width: 600px) {
   .menu-wrap {
     display: none;
+  }
+
+  body {
+    overflow-x: hidden; /* Prevent scrollbars */
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .carousel-wrapper {
+    overflow-x: hidden;
   }
 }
 /* Medium devices (landscape tablets, 768px and up) */
