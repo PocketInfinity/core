@@ -26,6 +26,7 @@ h1 {
 }
 
 nav > .title > h1 {
+  cursor: default;
   font-family: "Righteous", sans-serif;
   font-weight: 200;
   font-style: normal;
@@ -63,6 +64,7 @@ nav > .title {
 }
 
 nav > .title > p {
+  cursor: default;
   color: black;
 
   font-family: "Roboto", sans-serif;
@@ -116,6 +118,7 @@ nav a:hover::after {
 }
 
 .showcase {
+  cursor: default;
   background: url("./img/showcase.jpg") no-repeat center center/cover;
   display: flex;
   flex-direction: column;
@@ -362,6 +365,7 @@ nav a:hover::after {
   }
 
   nav > title {
+    cursor: default;
     display: grid;
     grid-template-columns: 1fr;
     justify-content: center;
