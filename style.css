@@ -1,5 +1,5 @@
 /* fonts */
-@import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yellowtail&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yellowtail&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +10,13 @@ body {
   font-family: "Roboto", sans-serif;
   line-height: 1.4;
   overflow-x: hidden; /* Prevent scrollbars */
+
+  background: rgb(146, 236, 237);
+  background: linear-gradient(
+    0deg,
+    rgba(146, 236, 237, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
+  );
 }
 
 h1 {
@@ -38,10 +45,6 @@ nav > .title > h1 {
 
 /* NAVBAR */
 nav {
-  position: sticky; /* This makes the navbar sticky */
-  top: 0; /* Position it at the top of the viewport */
-  width: 100%; /* Full width */
-  z-index: 1000; /* Ensures it stays above other content */
   background-color: white;
 
   display: flex;
@@ -125,16 +128,14 @@ nav a:hover::after {
   align-items: center;
   text-align: center;
   justify-content: flex-end;
-  padding-bottom: 50px;
-
+  margin-bottom: 10vh;
   margin-top: 5vh;
-  margin-bottom: 20px;
 }
 .showcase > h1 {
   max-width: 75%;
-  font-family: "Roboto", sans-serif;
+  font-family: "Playfair Display", serif;
   line-height: 1.4;
-  font-weight: 400;
+  font-weight: 500;
   text-transform: uppercase;
   text-align: center;
 
@@ -152,7 +153,6 @@ nav a:hover::after {
 
 .showcase .btn {
   margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 .btn {
@@ -175,13 +175,121 @@ nav a:hover::after {
 }
 
 .pretend-website {
-  height: 50vh;
-  width: 95%;
-  background-color: lavender;
-  border: 2px solid lavender;
-  border-radius: 40px;
+  height: 80vh;
+  width: 100%;
+  background-color: white;
+  border: 2px solid white;
+
+  margin: auto;
 }
 
+.whatsapp-sticky {
+  width: 45px;
+  height: 45px;
+  border: 3px solid white;
+  background-color: white;
+
+  border-radius: 0 15px 15px 0;
+
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+  z-index: 1000;
+  transform: translateY(180px);
+  margin-top: -45px; /* Move it up 50px */
+}
+
+.whatsapp-sticky > img {
+  height: 40px;
+  width: 40px;
+}
+
+.pretend-nav {
+  max-width: 100%;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  align-items: center;
+  margin: auto;
+  border-bottom: 3px solid orange;
+}
+
+.pretend-nav > .pretend-logo > .pretend-title {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.pretend-nav > .pretend-contact {
+  display: flex;
+  margin-right: 20px;
+  align-items: baseline;
+}
+
+.pretend-nav > .pretend-contact {
+  display: flex;
+  align-items: top;
+}
+
+.pretend-nav > i {
+  font-size: 35px;
+  color: #333;
+}
+
+.pretend-nav > .pretend-logo > i {
+  margin-right: 10px;
+  font-size: 35px;
+  color: #333;
+}
+
+.pretend-nav > .pretend-logo {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  margin: 0;
+}
+
+.pretend-login {
+  color: white;
+  padding: 5px;
+  border: 1px solid #0d6efd;
+  background-color: #0d6efd;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+h4 {
+  font-family: "Lato";
+  line-height: 1.4;
+  font-size: 25px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.pretend-showcase {
+  position: relative;
+  height: 500px;
+  width: 100%; /* Set the width of the div */
+  height: 400px; /* Set the height of the div */
+  background-image: url("img/technical.jpg"); /* Set the background image */
+  background-size: cover; /* Cover the entire div */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent the image from repeating */
+  display: flex; /* Optional: to center content */
+  align-items: center; /* Optional: to center content vertically */
+  justify-content: center; /* Optional: to center content horizontally */
+  color: white; /* Optional: text color */
+  filter: brightness(0.4);
+}
+
+.pretend-showcase-text {
+  position: absolute;
+  transform: translate(15px, -230px);
+  max-width: 90%;
+  margin: auto;
+  color: white;
+  margin-top: -25px; /* Move it up 50px */
+}
 /* MENU STYLES */
 .menu-wrap {
   position: fixed;
@@ -372,13 +480,15 @@ nav a:hover::after {
   }
 
   .showcase > h1 {
-    font-size: 40px;
-    max-width: 80%;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-size: 45px;
+    max-width: 95%;
   }
 
   .showcase > p {
-    max-width: 80%;
-    font-size: 25px;
+    max-width: 90%;
+    font-size: 20px;
   }
 }
 
@@ -454,6 +564,27 @@ nav a:hover::after {
 }
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
+  .showcase > p {
+    font-size: 30px;
+  }
+
+  .pretend-website {
+    max-width: 80%;
+    border-radius: 20px;
+  }
+  .pretend-showcase {
+    background-size: cover; /* Cover the entire div */
+    background-position: top; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+  }
+
+  h4 {
+    font-size: 50px;
+  }
+
+  .pretend-showcase-text {
+    transform: translate(400px, -200px);
+  }
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
