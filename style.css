@@ -1,5 +1,5 @@
 /* fonts */
-@import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yellowtail&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Doto:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Righteous&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Yellowtail&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -205,6 +205,8 @@ nav a:hover::after {
 }
 
 .pretend-nav {
+  font-family: "Black Ops One", system-ui;
+
   max-width: 100%;
   margin-top: 20px;
   display: flex;
@@ -217,13 +219,19 @@ nav a:hover::after {
 
 .pretend-nav > .pretend-logo > .pretend-title {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 .pretend-nav > .pretend-contact {
   display: flex;
   margin-right: 20px;
-  align-items: baseline;
+  align-items: center;
+}
+
+.pretend-socials {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
 }
 
 .pretend-nav > .pretend-contact {
@@ -259,7 +267,7 @@ nav a:hover::after {
 }
 
 h4 {
-  font-family: "Lato";
+  font-family: "Black Ops One", system-ui;
   line-height: 1.4;
   font-size: 25px;
   text-transform: uppercase;
@@ -289,6 +297,26 @@ h4 {
   margin: auto;
   color: white;
   margin-top: -25px; /* Move it up 50px */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.pretend-showcase-text > p {
+  padding: 0 10px 0 20px;
+}
+
+.pretend-button {
+  margin: 20px auto;
+  background-color: #0d6efd;
+  border: 2px solid #0d6efd;
+  border-radius: 10px;
+  text-transform: uppercase;
+  color: white;
+  padding: 5px;
 }
 /* MENU STYLES */
 .menu-wrap {
@@ -569,7 +597,7 @@ h4 {
   }
 
   .pretend-website {
-    max-width: 80%;
+    max-width: 70%;
     border-radius: 20px;
   }
   .pretend-showcase {
@@ -578,12 +606,16 @@ h4 {
     background-repeat: no-repeat; /* Prevent the image from repeating */
   }
 
+  .pretend-socials {
+    font-size: 30px;
+  }
+
   h4 {
     font-size: 50px;
   }
 
   .pretend-showcase-text {
-    transform: translate(400px, -200px);
+    transform: translate(300px, -200px);
   }
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
