@@ -402,6 +402,57 @@ h4 {
   transition: 0.6s;
 }
 
+
+.why-us{
+  max-width: 90%;
+  margin: auto;
+
+}
+
+.why-us > h1{
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 60px;
+    text-align: center;
+}
+
+.why-us-body{
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: bottom;
+  justify-items: space-between;
+}
+
+.why-us-body > .devices > img{
+  width:200px;
+  height: 300px;
+}
+
+.why-us-body-mobile{
+  display: none;
+}
+
+
+.devices{
+  font-size: 150px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 15px;
+  align-items: center;
+}
+
+.why-us-body > p{
+  color: white;
+  padding: 20px 10px 20px 30px;
+  border-radius: 50px 50px 50px 0px;
+  background-color: #007f81;
+  max-width: 80%;
+  font-size: 25px;
+}
+
+
 /* MENU STYLES */
 .menu-wrap {
   position: fixed;
@@ -658,7 +709,70 @@ h4 {
     max-width: 90%;
     font-size: 20px;
   }
+
+
+.whatsapp-sticky {
+  transform: translateY(250px);
 }
+
+.whatsapp-sticky > img {
+  width:50px;
+  height:50px;
+}
+.pretend-website{
+  max-width: 95%;
+  margin: auto;
+  box-shadow: 8px 8px 8px rgba(0, 0, 0, 0.3); /* Slight shadow */
+
+  border-radius: 10px;
+}
+
+.pretend-socials{
+  font-size:20px;
+}
+.pretend-showcase-text{
+  max-width: 90%;
+}
+
+.pretend-nav > .pretend-logo > .pretend-title > h1{
+font-size: 10px;
+}
+
+.why-us-body{
+  display: none;
+}
+
+
+.why-us-body-mobile{
+  margin-top: 20px;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: top;
+  justify-items: space-between;
+}
+
+.why-us-body-mobile > .mobile-devices{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 80px;
+}
+
+.why-us-body-mobile > .mobile-devices > img{
+  width:100px;
+  height: 100px;
+}
+
+
+.why-us-body-mobile > p{
+  line-height: 20px;
+  margin-top: 40px;
+  text-align: center;
+}
+
+}
+
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
@@ -697,7 +811,7 @@ h4 {
 
   h4 {
     font-size: 50px;
-  }
+
 }
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
