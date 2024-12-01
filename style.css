@@ -27,7 +27,7 @@ body {
 /* Infinite White Line */
 .white-line {
   position: absolute;
-  height: 100000px;
+  height: 10000px;
   margin-left: 6vw;
   border: 1px solid white;
   z-index: 1;
