@@ -141,7 +141,7 @@ a {
   background-color: #443f3b;
 
   padding-top: 10px;
-  padding-bottom: 10px;
+  padding-bottom: 100px;
   padding-left: 5px;
   padding-right: 5px;
 }
@@ -195,6 +195,72 @@ a {
   font-weight: 250;
 }
 
+/* Price Section */
+
+.price-wrapper {
+  background-color: #e0dacc;
+
+  padding-top: 10px;
+
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.price-grid {
+  max-width: 60%;
+  margin: auto;
+  margin-top: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  justify-content: center;
+  background-color: transparent;
+  /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); Adding a shadow effect */
+}
+
+.price-grid {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: color;
+  max-width: 99%;
+  margin: auto;
+}
+
+.price {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.price > h1 {
+  color: black;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 250;
+  font-style: normal;
+  font-size: 60px;
+  text-align: center;
+}
+
+.price-grid > p {
+  font-family: "roboto";
+  font-weight: 300;
+  font-size: 25px;
+  text-align: center;
+  max-width: 50%;
+}
+
+.price > i {
+  padding-top: 5px;
+  font-size: 40px;
+  margin-right: 7px;
+}
+
+.price-grid > i {
+  font-size: 30px;
+}
+
 /* FOOTER */
 
 .main-footer {
@@ -230,7 +296,6 @@ a {
 }
 
 footer {
-  margin-top: 100px;
   border-top: 3px solid #888;
 }
 
@@ -261,7 +326,17 @@ footer {
   text-transform: uppercase;
 }
 
-.newsletter > h2 {
+.newsletter {
+  justify-content: center;
+  text-align: left;
+}
+
+.footer-form > h2 {
+  text-decoration: none;
+  font-size: 20px;
+  text-align: left;
+  max-width: 100%;
+  font-weight: 300;
   margin: 2vh 0vh 2vh 0vh;
 }
 
@@ -274,6 +349,7 @@ footer {
   display: flex;
   flex-direction: column;
   width: 250px;
+  align-items: baseline;
 }
 
 .footer-form > input {
@@ -283,11 +359,11 @@ footer {
 
 .footer-form > button {
   width: 100%;
-  background-color: transparent;
+  background-color: #2559f4;
   border: none;
   color: white;
   font-size: 22px;
-  border-radius: 10px;
+  border-radius: 1px;
 }
 
 input[type="email"] {
@@ -328,9 +404,30 @@ input[type="email"]::placeholder {
   .service-grid-card > h2 {
     max-width: 50%;
   }
+
+  .price-grid-card > h2 {
+    max-width: 50%;
+  }
 }
 
 @media (max-width: 600px) {
+  .price-wrapper {
+    background-color: #e0dacc;
+    height: 60vh;
+
+    padding-top: 10px;
+
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .price-grid > p {
+    font-family: "roboto";
+    font-weight: 300;
+    font-size: 25px;
+    text-align: center;
+    max-width: 95%;
+  }
   .main-footer {
     display: flex;
     flex-direction: column;
@@ -385,6 +482,16 @@ input[type="email"]::placeholder {
   }
 
   .service-grid-card > h2 {
+    font-size: 15px;
+    max-width: 100%;
+  }
+
+  .price-grid-body {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .price-grid-card > h2 {
     font-size: 15px;
     max-width: 100%;
   }
