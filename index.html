@@ -25,14 +25,28 @@
   </head>
 
   <body>
-    <div class="white-line"></div>
+
     <nav>
       <div class="nav-body">
-        <div class="hamburger">
+        <div class="hamburger" id="hamburger">
           <div class="hamburger-top"></div>
           <div class="hamburger-middle"></div>
           <div class="hamburger-bottom"></div>
         </div>
+
+        <!-- Aside -->
+
+          <div id="aside-wrapper" class="aside-wrapper">
+            <div class="aside" id="aside">
+             <span class="closeAsideBtn">&times;</span>
+              <ul>
+                <li>About</li>
+                <li>Build Now</li>
+                <li>Our Clients</li>
+              </ul>
+            </div>
+          </div>
+
 
         <h1>Core</h1>
 
@@ -57,9 +71,17 @@
         </h2>
 
         <div class="build-now">
-          <button>Build Now</button>
+          <button id="modalBtn" class="button">Build Now</button>
+          </div>
         </div>
       </div>
+    </div>
+
+      <div id="simpleModal" class="modal">
+        <div class="modal-content">
+          <span class="closeBtn">&times;</span>
+          <h1>Have a Project in Mind?</h1>
+        </div>
 
       <!-- <div class="showcase-img">
         <img
@@ -147,31 +169,36 @@
         
 
       
-      <form class="footer-form">
+      <form class="footer-form" id="footer-form">
         <h2>Sign up to receive news, promotions and Services</h2>
-
-        <input type="email" class="footer-form-email" placeholder="yourname@email.com">
-        <button id="news-button">Sign Up</button>
+        <h2 style="display:none; padding:0; margin:0; color:orange; font-family: 'roboto';" id="errorMsg" >Please enter all fields</h2>
+        <input type="email" required id="emailInput" placeholder="yourname@email.com" >
+        <button type="button" id="news-button" onclick="newsDisplay()">Sign Up</button>
         <div class="notice">
         <p style="font-size: 15px;">By Signing Up, you consent to Core processing your data. Unsubscriber anytime. See our Privacy Policy</p>
         </div>
 
-        <div class="newsletter-confirm" style="display:none">
-          
-        <h1>Thank you for signing up.</h1>
-
-        <p>In a few minutes, you’ll receive a confirmation email. If it lands in your spam folder, move the email to your primary inbox to make sure you never miss an update.</p>
-        </div>
+        
 
         <div class="copyright-mobile">
           &#169 2024 <h1 style="display:inline; font-size: 20px;"> Core</h1>&trade;. All Rights Reserved
         </div>
 
       </form>
+
+      <div class="newsletter-confirm" style="display:none" id="newsletter-confirm">
+          
+        <h1>Thank you for signing up.</h1>
+
+        <p>In a few minutes, you’ll receive a confirmation email. If it lands in your spam folder, move the email to your primary inbox to make sure you never miss an update.</p>
+        </div>
       </div>
 
 
     </div>
   </footer>
+
+  <script src="script.js"></script>
+
 </body>
 </html>

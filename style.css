@@ -24,6 +24,127 @@ body {
 /* --------------CLASS STYLING---------------- */
 /* ------------------------------------------- */
 
+/* ------------------------------------------- */
+/* --------------MODAL------------------------ */
+/* ------------------------------------------- */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: #3e3834;
+  color: white;
+  margin: 20% auto;
+  text-align: left;
+  width: 70%;
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+
+  animation-name: modalopen;
+  animation-duration: 1s;
+}
+
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ------------------------------------------- */
+/* --------------Aside------------------------ */
+/* ------------------------------------------- */
+
+.aside-wrapper {
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.aside {
+  background-color: #e0dacc;
+  width: 20%;
+  height: 100%;
+  color: #443f3b;
+  animation: asideopen;
+  animation-duration: 0.5s;
+}
+
+.closeAsideBtn {
+  font-size: 35px;
+  padding-left: 10px;
+}
+
+.aside > ul > li {
+  list-style: none;
+  font-size: 30px;
+  padding-top: 25px;
+}
+
+li:hover {
+  font-size: 30px;
+  padding-top: 25px;
+  border-bottom: #2559f4;
+}
+
+@keyframes asideopen {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes asideclose {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.modal-content > h1 {
+  text-align: center;
+  color: white;
+  font-family: "Roboto";
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 45px;
+}
+
+.closeBtn {
+  color: #ccc;
+  float: right;
+  font-size: 40px;
+}
+
+.closeBtn:hover,
+.closeBtn:focus {
+  color: #e0dacc;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 /* Infinite White Line */
 .white-line {
   position: absolute;
@@ -49,6 +170,7 @@ a {
 .hamburger {
   display: flex;
   flex-direction: column;
+  min-width: 30px;
 }
 
 .hamburger-top,
@@ -57,13 +179,18 @@ a {
   margin: 3px 0 3px 0;
   height: 2px;
   width: 30px;
+
   background-color: white;
-  color: white;
 }
 
 .hamburger:hover > * {
   background-color: lightblue;
   transition: 0.5s;
+}
+
+.hamburger:hover > * {
+  transition: 0.5s;
+  width: 20px;
 }
 
 .nav-body > h1 {
@@ -411,6 +538,14 @@ input[type="email"]::placeholder {
 }
 
 @media (max-width: 600px) {
+  .aside {
+    background-color: #e0dacc;
+    width: 50%;
+    height: 100%;
+    color: #443f3b;
+    animation: asideopen;
+    animation-duration: 0.5s;
+  }
   .price-wrapper {
     background-color: #e0dacc;
     height: 60vh;
