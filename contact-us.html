@@ -48,7 +48,7 @@
               </div>
     
     
-            <h1>Core</h1>
+            <h1><a href="index.html">Core</a></h1>
     
             <div class="nav-socials">
               <a href="tel:07454666870"><i class="fa-solid fa-phone"></i></a>
@@ -64,8 +64,10 @@
         <div class="form-wrapper">
 
 
-        <form action="">
+        <form action="" class="contact-form">
             <h1>Get In Touch</h1>
+
+            
             <label for="firstName">First Name</label>
             <input type="text" id="firstName" name="firstName" required>
 
@@ -84,7 +86,70 @@
     </div>
 
         <script src="script.js"></script>
+
+
+        <footer>
+            <div class="main-footer">
+              <div class="title">
+                <h1>Core</h1>
+                <p>UK Web Development Specialists</p>
+              </div>
+          
+              <div class="about-us">
+                <ul>
+                  <p><strong style="font-size: 25px;">About</strong></p>
+                  <li><a href="#">Our Story</a></li>
+                  <li><a href="#">Support</a></li>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Contact</a></li>
+        
+                </ul>
+              </div>
+        
+              <div class="legal">
+                <p><strong style="font-size: 25px;">Legal</strong></p>
+                <ul>
+                  <li><a href="#">Legal Overview</a></li>
+                  <li><a href="#">Privacy Policy</a></li>
+                  <li><a href="#">Transparancy Act</a></li>
+                  <li><a href="#">Cookie Settings</a></li>
+                </ul>
+              </div>
+              <div class="newsletter">
+                
+        
+              
+              <form class="footer-form" id="footer-form">
+                <h2>Sign up to receive news, promotions and Services</h2>
+                <h2 style="display:none; padding:0; margin:0; color:orange; font-family: 'roboto';" id="errorMsg" >Please enter all fields</h2>
+                <input type="email" required id="emailInput" placeholder="yourname@email.com" >
+                <button type="button" id="news-button" onclick="newsDisplay()">Sign Up</button>
+                <div class="notice">
+                <p style="font-size: 15px;">By Signing Up, you consent to Core processing your data. Unsubscriber anytime. See our Privacy Policy</p>
+                </div>
+        
+                
+        
+                <div class="copyright-mobile">
+                  &#169 2024 <h1 style="display:inline; font-size: 20px;"> Core</h1>&trade;. All Rights Reserved
+                </div>
+        
+              </form>
+        
+              <div class="newsletter-confirm" style="display:none" id="newsletter-confirm">
+                  
+                <h1>Thank you for signing up.</h1>
+        
+                <p>In a few minutes, you’ll receive a confirmation email. If it lands in your spam folder, move the email to your primary inbox to make sure you never miss an update.</p>
+                </div>
+              </div>
+        
+        
+            </div>
+          </footer>
   </body>
+
+
 
 
 </html>
