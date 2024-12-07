@@ -245,6 +245,11 @@ a {
   text-decoration: none;
 }
 
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
 /* Navbar */
 .nav-body {
   display: flex;
@@ -692,7 +697,7 @@ input[type="email"]::placeholder {
   }
 
   form > #submitBtn {
-    width: 80%;
+    width: 60%;
     color: white;
     margin-bottom: 10px;
     padding: 15px;
