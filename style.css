@@ -243,6 +243,7 @@ li:hover {
 /* remove underlines from a tags */
 a {
   text-decoration: none;
+  color: white;
 }
 
 a:visited {
