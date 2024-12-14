@@ -173,6 +173,17 @@ form > #submitBtn {
   padding-right: 10px;
 }
 
+.aside > ul > li > a {
+  color: #443f3b;
+  border-bottom: 0px;
+}
+
+.aside > ul > li > a:hover {
+  color: #443f3b;
+  border-bottom: 1px solid blue;
+  transition: 0.5s;
+}
+
 .closeAsideBtn {
   font-size: 35px;
   padding-left: 10px;
@@ -617,10 +628,10 @@ input[type="email"]::placeholder {
 .why-core {
   background-color: #2f372f;
   padding-bottom: 100px;
+  padding-top: 15px;
 }
 
 .why-core > h1 {
-  margin-top: 0px;
   color: white;
   font-family: "Playfair Display", sans-serif;
   font-optical-sizing: auto;
@@ -637,6 +648,7 @@ input[type="email"]::placeholder {
   align-items: center;
   max-width: 80%;
   margin: auto;
+  box-shadow: 0 5px 8px 0 rgba(21, 21, 21, 0.9);
 }
 
 .why-core-body > .glasgow {
@@ -810,6 +822,7 @@ input[type="email"]::placeholder {
     animation: asideopen;
     animation-duration: 0.5s;
   }
+
   .price-wrapper {
     background-color: #e0dacc;
     height: 60vh;
